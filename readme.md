@@ -1,1 +1,1 @@
-## Just a simple script to launch 
+Just a simple script to update and launch both BetterDiscord and Spicetify
