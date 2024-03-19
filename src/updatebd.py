@@ -1,6 +1,6 @@
 import os
+from bdgetvers import *
 
-changelog_path = "BetterDiscord/CHANGELOG.md"
 bdversion_path = "bdversion.txt"
 
 def attempt_BD_install():
@@ -32,14 +32,14 @@ def install_bd():
     
     print("Updating bdversion.txt...")
     os.chdir("..")
-    rewrite_bdversion(get_vers(changelog_path))
+    rewrite_bdversion(get_vers())
     print("Updated!")
     
 def is_there_update():
     if os.path.exists("BetterDiscord") == False: # not installed
         return True
     
-    version = get_vers(changelog_path)
+    version = get_vers()
     if cmpr_versions(version) == True: # if equal
         return False # no update
     else:
@@ -59,9 +59,3 @@ def rewrite_bdversion(version): # fix file
         f.truncate(0)
         f.write(version)
         print(version)
-        
-def get_vers(path):
-    with open(path, "r") as f:
-        for line in f:
-            if "## " in line and "###" not in line:
-                return line
