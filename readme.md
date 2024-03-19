@@ -7,6 +7,6 @@ cd bootup-script <br>
 pip install pyinstaller <br>
 pyinstaller src/main.py <br>
 cd ../dist <br>
-make a shortcut of main.py <br>
+make a shortcut of main.exe <br>
 in run (win + r) type shell:startup <br>
 drag shortcut into directory <br>
