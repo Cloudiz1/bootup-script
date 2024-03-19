@@ -4,7 +4,7 @@ Just a simple script to update and launch both BetterDiscord and Spicetify
 
 git clone https://github.com/Cloudiz1/bootup-script.git <br>
 cd bootup-script <br>
-pyinstaller src/main.exe <br>
+pyinstaller src/main.py <br>
 cd ../dist <br>
 make a shortcut of main.py <br>
 in run (win + r) type shell:startup <br>
