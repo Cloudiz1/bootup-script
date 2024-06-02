@@ -1,14 +1,4 @@
 import os
-from bdgetvers import *
-
-bdversion_path = "bdversion.txt"
-
-def attempt_BD_install():
-    if is_there_update() == True:
-        print("Installing BetterDiscord...")
-        install_bd()
-    else:
-        print("No BetterDiscord update")
 
 def sync_cmd(command):
     print(command)
@@ -29,33 +19,3 @@ def install_bd():
     sync_cmd("pnpm build")
     sync_cmd("pnpm inject")
     print("Success!")
-    
-    print("Updating bdversion.txt...")
-    os.chdir("..")
-    rewrite_bdversion(get_vers())
-    print("Updated!")
-    
-def is_there_update():
-    if os.path.exists("BetterDiscord") == False: # not installed
-        return True
-    
-    version = get_vers()
-    if cmpr_versions(version) == True: # if equal
-        return False # no update
-    else:
-        return True
-                
-def cmpr_versions(version): 
-    if os.path.exists(bdversion_path) == False:
-        return False
-    
-    with open(bdversion_path, "r") as f:
-        if f.read() == version:
-            return True
-    return False
-
-def rewrite_bdversion(version): # fix file
-    with open(bdversion_path, "w") as f:
-        f.truncate(0)
-        f.write(version)
-        print(version)

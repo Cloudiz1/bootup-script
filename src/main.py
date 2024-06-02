@@ -6,7 +6,7 @@ os.system("spicetify update")
 os.system('start Spotify:')
 
 # check and launch discord
-attempt_BD_install()
+install_bd()
 os.system('start Discord:')
 
 input("Press enter to finish.")
